@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">ToDoApp_v3</string>
 
+    <string name="login_text">LOGIN</string>
+    <string name="login_email_text">E-mail address</string>
+    <string name="login_password_text">Password</string>
+
 </resources>
