@@ -21,7 +21,14 @@
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="300dp"
-        android:background="@android:drawable/ic_menu_add" />
+        android:text="ADD"/>
+
+    <Button
+        android:id="@+id/deleteTask"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:text="Delete" />
 
 
 </RelativeLayout>

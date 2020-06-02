@@ -5,14 +5,11 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,8 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<Task> taskList = new ArrayList<>();
     private TaskAdapter taskAdapter;
-
-
+    private int listPosition = 0;
 
 
     @Override
@@ -43,6 +39,9 @@ public class MainActivity extends AppCompatActivity {
                 Task task = taskList.get(position);
                 //Toast.makeText(getApplicationContext(), task.getText() + " is selected!", Toast.LENGTH_SHORT).show();
                 Toast.makeText(getApplicationContext(), taskAdapter.getItemCount() + "is asd", Toast.LENGTH_SHORT).show();
+                listPosition = position;
+
+
             }
 
             @Override
@@ -63,6 +62,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Button deleteTask = (Button) findViewById(R.id.deleteTask);
+        deleteTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                taskAdapter.deleteTaskFromList(listPosition);
+                taskAdapter.notifyDataSetChanged();
+            };
+        });
+
     }
 
     private void prepareTaskData(){
@@ -75,7 +83,4 @@ public class MainActivity extends AppCompatActivity {
         taskAdapter.notifyDataSetChanged();
     }
 
-    private void addNewTask(){
-
-    }
 }

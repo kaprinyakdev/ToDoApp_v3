@@ -47,6 +47,13 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
 
     public void addTaskToList(Task t){
         taskList.add(t);
-
     }
+
+    public void deleteTaskFromList(int position){
+        taskList.remove(position);
+    }
+
+
+
+
 }
