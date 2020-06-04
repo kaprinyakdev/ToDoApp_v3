@@ -20,10 +20,20 @@
         android:textSize="16dp"
         android:textStyle="bold" />
 
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"/>
+
+
     <TextView
         android:id="@+id/creationDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tasktext" />
+        android:layout_below="@id/tasktext"
+        android:textSize="12dp"
+        android:textStyle="italic"/>
+
 
 </RelativeLayout>
