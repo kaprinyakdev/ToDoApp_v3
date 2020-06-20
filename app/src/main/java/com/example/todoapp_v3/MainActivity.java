@@ -10,6 +10,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
+
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -85,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
         taskList.add(task);
 
         taskAdapter.notifyDataSetChanged();
+    }
+
+    public void setUserAccount(GoogleSignInAccount userAccount){
+            TextView userAccountText = (TextView) findViewById(R.id.userAccount);
+            userAccountText.setText(userAccount.getEmail());
     }
 
 }
